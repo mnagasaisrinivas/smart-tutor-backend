@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from app.extensions import db
 from app.models.quiz_result import QuizResult
-from app.utils.openrouter_api import get_quiz_questions
+from app.utils import get_quiz_questions
 
 quiz_bp = Blueprint("quiz", __name__)
 

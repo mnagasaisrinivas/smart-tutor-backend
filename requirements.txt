@@ -6,4 +6,3 @@ Flask-SQLAlchemy
 python-dotenv
 requests
 langchain
-psycopg2

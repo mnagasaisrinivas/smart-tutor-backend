@@ -33,11 +33,16 @@ def register():
 
     response = jsonify({
         "token": access_token,
-        "user": {"id": new_user.id, "name": new_user.name, "email": new_user.email}
+        "user": {
+            "id": new_user.id,
+            "name": new_user.name,
+            "email": new_user.email
+            }
     })
     set_access_cookies(response, access_token)
     set_refresh_cookies(response, refresh_token)
-    return response, 201
+    response.status_code = 201
+    return response
 
 
 @auth_bp.route("/login", methods=["POST"])

@@ -12,10 +12,12 @@ class Config:
     OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=1)      # 1 day
     JWT_REFRESH_TOKEN_EXPIRES = timedelta(days=30)    # 30 days
-    JWT_TOKEN_LOCATION = ["headers", "cookies"]
+    JWT_TOKEN_LOCATION = ["cookies", "headers"]
     JWT_COOKIE_SECURE = False  # Set to True in production with HTTPS
     JWT_COOKIE_HTTPONLY = True
     JWT_REFRESH_COOKIE_PATH = "/api/auth/refresh"
     JWT_ACCESS_COOKIE_PATH = "/"
+    JWT_COOKIE_SAMESITE = "Lax"
+    JWT_COOKIE_CSRF_PROTECT = False
 
 

@@ -30,8 +30,12 @@ def create_app():
             response.headers.add('Access-Control-Allow-Credentials', 'true')
             return response
 
-    # Creating Tables
-    with app.app_context():
-        db.create_all()
-
+    @app.errorhandler(422)
+    def handle_unprocessable_entity(err):
+        return jsonify({
+            "error": "Unprocessable Entity",
+            "message": str(err)
+        }), 422
+    
+    
     return app

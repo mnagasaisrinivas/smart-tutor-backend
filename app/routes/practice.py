@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required
-from app.utils.openrouter_api import get_practice_problems
+from app.utils import get_practice_problems
 
 practice_bp = Blueprint("practice", __name__)
 
