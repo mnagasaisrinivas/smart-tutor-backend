@@ -1,0 +1,9 @@
+Flask
+Flask-CORS
+Flask-JWT-Extended
+Flask-Migrate
+Flask-SQLAlchemy
+python-dotenv
+requests
+langchain
+psycopg2
